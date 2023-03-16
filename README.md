@@ -1,5 +1,7 @@
 # Laravel Passport ##
 
+<img width="1440" alt="register" src="https://user-images.githubusercontent.com/55048197/225738529-16ab8ee7-6b4f-40c9-bae3-b058451fbffb.png">
+
 ## Installation
 
 ``` bash
@@ -146,12 +148,16 @@ $ php artisan serve
 * password: password
 * confirm_password: repeatPassword
 
+<img width="1440" alt="register" src="https://user-images.githubusercontent.com/55048197/225737071-e0e5c678-6ef3-43ce-8df0-613591ef8e9a.png">
+
 2. Login API: (POST)
 [localhost:8000/api/login](localhost:8000/api/login)
 
 - Body => form-data
 * email: someOneEmail
 * password: password
+
+<img width="1440" alt="login" src="https://user-images.githubusercontent.com/55048197/225737101-092bfb34-d82f-44ed-8031-2c131b9c579a.png">
 
 3. List all products API: (GET)
 [localhost:8000/api/products](localhost:8000/api/products)
@@ -164,17 +170,27 @@ $ php artisan serve
 ]
 ```
 
+<img width="1440" alt="list all products" src="https://user-images.githubusercontent.com/55048197/225737187-c4237775-b77d-447e-ac89-83a2983ee518.png">
+
 4. Create a product API: (POST)
 [localhost:8000/api/products](localhost:8000/api/products)
+
+<img width="1440" alt="create a product" src="https://user-images.githubusercontent.com/55048197/225737659-68576dc1-b970-4bb6-b0c7-13dd2ce2d06e.png">
 
 5. Retrieve a product API: (GET)
 [localhost:8000/api/products/1](localhost:8000/api/products/1)
 
+<img width="1440" alt="retrieve a product" src="https://user-images.githubusercontent.com/55048197/225737798-7b60c3c9-dc09-47ed-992f-02e2cca9a337.png">
+
 6. Update a product API: (PUT)
 [localhost:8000/api/products/1](localhost:8000/api/products/1)
 
+<img width="1440" alt="update a product" src="https://user-images.githubusercontent.com/55048197/225738194-960d9508-141b-4828-8bc6-dcd0f33e4516.png">
+
 7. Delete a product API: (DELETE)
 [localhost:8000/api/products/1](localhost:8000/api/products/1)
+
+<img width="1440" alt="delete a product" src="https://user-images.githubusercontent.com/55048197/225738442-4e4190d5-3d95-4d01-81b4-d0bf8fbca963.png">
 
 ## Postman collection path in json file
 
