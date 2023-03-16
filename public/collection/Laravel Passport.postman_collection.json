@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "695fa501-06aa-4f15-9b5b-85c92c810fc6",
+		"name": "Laravel Passport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "6603383"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "'Bearer '.$accessToken",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "John",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "john@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "confirm_password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "john@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "List all products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWMzOWEzODkxOTk2ZWNkMTM0NWY3NTA4N2NlMzA1YzQ5OWVmZGY5NjVjMDVmNThjY2M5ZDJhNTE0MjI5MGE1MjE5MGI0MTczNzk2ZDgxOGQiLCJpYXQiOjE2Nzg5OTQyMTUuMzA1MjY3LCJuYmYiOjE2Nzg5OTQyMTUuMzA1MjcsImV4cCI6MTcxMDYxNjYxNS4yOTAyODcsInN1YiI6IjciLCJzY29wZXMiOltdfQ.ZthUyQ9XLf0Um5ctxY9xQpndbdUsJ-Mz3gIEHt_wGoUDnN-MbHH7fu36PrrNICm7DJT8T9b4tyTFN_SRPXlA0X4nb3See82OxN_qHN0A1T_lMTv-H7UfrlsWhROUMx8ftHbq-umIBC5LYPUWHTRk6eHKBjzOqy0l3ijOB-b8bEQ42KG5xyocfqKD85Z89_HlgpRbe038ojKcrOgDdCvuoiipAtv5KlVR6zP08SMegn-yFCVc8TXsBZRgVAG_93FzQAC8mmiZlFeb5R6No1lpfG6bV4gGNxqiUKP990LCj4ZLp5b4zD2Vi0rfz7R8_FEs-7uszEiJypwv_oeoPJRZ1YEruIoSpNdMX-s5rWIeE13i0oKffgkeUYOIPMHEb7CEpAa4cFsA6O6mz5Az7U8MNkQ03IM_L5ODLNezXN6c-NSH8FNb35ltdhX6kxNlQbXCMGELqneAh1Pn9o_oGhWGHQw1TXAsLfEjEXQXB3zbReQR4JlwzRZYGuzeBAay9YYArJBFdWu1fy1MKBEnGWm-ul79g2AqDUe8J0HcOuf2ng3pDO30w5djwn3oywEkfYypKeUHGwipXW9q81tw7G4lCzoHVebhcAOK94aC8JvSkBGjdpT9Og0i800w3A_x4QDS6_5EV6hK_W5N-oBW-H2hPhrcCLj8p4E71u7YNpWWSAs"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODQxN2M4NWEwMTIwZDRjMWIwZTlkZjJhYzhiZDZiZTU4Y2M5NWI2ZWU4MjVhZTlmNjBhMmM3YTIzMGU2Zjg0NzA0Nzc2MzcxNTI5MWY0M2IiLCJpYXQiOjE2Nzg4MjU3MTAuNjQ2MTc5LCJuYmYiOjE2Nzg4MjU3MTAuNjQ2MTgxLCJleHAiOjE3MTA0NDgxMTAuNjM3OTM4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.bwnHGrwXf-Z4X6GtytTkHD0PEYdFkXH56RRC-tiYHxA0H1rRleTQf1MiSOP8iADD7eSfBhLXXfxWoG-_OF40-5m3zbLs5oBZF1bLV9vHiMSkWp_uPYSVoBM17trIX83wPVQ7VYI9zy2WXLf62xETeGwKZZsk5w7r2XjG5bV6N1V5b3q5Hv0Co50kuqUzT70EEFWSkBficys5HPTBshmZNniKs0IompnyesrUBURHA0dgdbWZuy42bdnVfybFx_ctsjrKD-Du-9kAvnQe3xiYw2aGvGHlRzXE4qzDJPl_F67qRTAGdhQF3KOuW3ZcYnChtNnh9kLoavVqZsa3ggcR3mLxIkfX4OhFx7eWWDrf-g_TeQIhUg-W0_XyeGMkYClXypiAH2FLTd0XKKIVPc9Duk_gk8WzPTEOXQgfMegXpng6VgzhQG2GYLUgEnxNs4un9WGnczTVK2Ue_XB2Mxhsc-mB2nfhgzfvDPUGVOnWrI1eI4Xy8cg0RUP2GUEIzTBTKikUQvj5pBuSfWh8NjO4boqATjsP9PuK4-cxiMtdToinMOgOsS8mTJRxE7eHiQZcn7V4--Yk3Yz032AAobVY7K54HLqc0J4yS47nmve4Vb4St8uiZMCbEJc8GrPENdPjcMK3MJuF_66tNHXBubEucM7FaqdETUw1aagnwQPKxog"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "LED",
+							"type": "text"
+						},
+						{
+							"key": "detail",
+							"value": "Samsung",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODQxN2M4NWEwMTIwZDRjMWIwZTlkZjJhYzhiZDZiZTU4Y2M5NWI2ZWU4MjVhZTlmNjBhMmM3YTIzMGU2Zjg0NzA0Nzc2MzcxNTI5MWY0M2IiLCJpYXQiOjE2Nzg4MjU3MTAuNjQ2MTc5LCJuYmYiOjE2Nzg4MjU3MTAuNjQ2MTgxLCJleHAiOjE3MTA0NDgxMTAuNjM3OTM4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.bwnHGrwXf-Z4X6GtytTkHD0PEYdFkXH56RRC-tiYHxA0H1rRleTQf1MiSOP8iADD7eSfBhLXXfxWoG-_OF40-5m3zbLs5oBZF1bLV9vHiMSkWp_uPYSVoBM17trIX83wPVQ7VYI9zy2WXLf62xETeGwKZZsk5w7r2XjG5bV6N1V5b3q5Hv0Co50kuqUzT70EEFWSkBficys5HPTBshmZNniKs0IompnyesrUBURHA0dgdbWZuy42bdnVfybFx_ctsjrKD-Du-9kAvnQe3xiYw2aGvGHlRzXE4qzDJPl_F67qRTAGdhQF3KOuW3ZcYnChtNnh9kLoavVqZsa3ggcR3mLxIkfX4OhFx7eWWDrf-g_TeQIhUg-W0_XyeGMkYClXypiAH2FLTd0XKKIVPc9Duk_gk8WzPTEOXQgfMegXpng6VgzhQG2GYLUgEnxNs4un9WGnczTVK2Ue_XB2Mxhsc-mB2nfhgzfvDPUGVOnWrI1eI4Xy8cg0RUP2GUEIzTBTKikUQvj5pBuSfWh8NjO4boqATjsP9PuK4-cxiMtdToinMOgOsS8mTJRxE7eHiQZcn7V4--Yk3Yz032AAobVY7K54HLqc0J4yS47nmve4Vb4St8uiZMCbEJc8GrPENdPjcMK3MJuF_66tNHXBubEucM7FaqdETUw1aagnwQPKxog"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "http://localhost:8000/api/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODQxN2M4NWEwMTIwZDRjMWIwZTlkZjJhYzhiZDZiZTU4Y2M5NWI2ZWU4MjVhZTlmNjBhMmM3YTIzMGU2Zjg0NzA0Nzc2MzcxNTI5MWY0M2IiLCJpYXQiOjE2Nzg4MjU3MTAuNjQ2MTc5LCJuYmYiOjE2Nzg4MjU3MTAuNjQ2MTgxLCJleHAiOjE3MTA0NDgxMTAuNjM3OTM4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.bwnHGrwXf-Z4X6GtytTkHD0PEYdFkXH56RRC-tiYHxA0H1rRleTQf1MiSOP8iADD7eSfBhLXXfxWoG-_OF40-5m3zbLs5oBZF1bLV9vHiMSkWp_uPYSVoBM17trIX83wPVQ7VYI9zy2WXLf62xETeGwKZZsk5w7r2XjG5bV6N1V5b3q5Hv0Co50kuqUzT70EEFWSkBficys5HPTBshmZNniKs0IompnyesrUBURHA0dgdbWZuy42bdnVfybFx_ctsjrKD-Du-9kAvnQe3xiYw2aGvGHlRzXE4qzDJPl_F67qRTAGdhQF3KOuW3ZcYnChtNnh9kLoavVqZsa3ggcR3mLxIkfX4OhFx7eWWDrf-g_TeQIhUg-W0_XyeGMkYClXypiAH2FLTd0XKKIVPc9Duk_gk8WzPTEOXQgfMegXpng6VgzhQG2GYLUgEnxNs4un9WGnczTVK2Ue_XB2Mxhsc-mB2nfhgzfvDPUGVOnWrI1eI4Xy8cg0RUP2GUEIzTBTKikUQvj5pBuSfWh8NjO4boqATjsP9PuK4-cxiMtdToinMOgOsS8mTJRxE7eHiQZcn7V4--Yk3Yz032AAobVY7K54HLqc0J4yS47nmve4Vb4St8uiZMCbEJc8GrPENdPjcMK3MJuF_66tNHXBubEucM7FaqdETUw1aagnwQPKxog"
+					}
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "LED 2",
+							"type": "text"
+						},
+						{
+							"key": "detail",
+							"value": "Samsung 2",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/api/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODQxN2M4NWEwMTIwZDRjMWIwZTlkZjJhYzhiZDZiZTU4Y2M5NWI2ZWU4MjVhZTlmNjBhMmM3YTIzMGU2Zjg0NzA0Nzc2MzcxNTI5MWY0M2IiLCJpYXQiOjE2Nzg4MjU3MTAuNjQ2MTc5LCJuYmYiOjE2Nzg4MjU3MTAuNjQ2MTgxLCJleHAiOjE3MTA0NDgxMTAuNjM3OTM4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.bwnHGrwXf-Z4X6GtytTkHD0PEYdFkXH56RRC-tiYHxA0H1rRleTQf1MiSOP8iADD7eSfBhLXXfxWoG-_OF40-5m3zbLs5oBZF1bLV9vHiMSkWp_uPYSVoBM17trIX83wPVQ7VYI9zy2WXLf62xETeGwKZZsk5w7r2XjG5bV6N1V5b3q5Hv0Co50kuqUzT70EEFWSkBficys5HPTBshmZNniKs0IompnyesrUBURHA0dgdbWZuy42bdnVfybFx_ctsjrKD-Du-9kAvnQe3xiYw2aGvGHlRzXE4qzDJPl_F67qRTAGdhQF3KOuW3ZcYnChtNnh9kLoavVqZsa3ggcR3mLxIkfX4OhFx7eWWDrf-g_TeQIhUg-W0_XyeGMkYClXypiAH2FLTd0XKKIVPc9Duk_gk8WzPTEOXQgfMegXpng6VgzhQG2GYLUgEnxNs4un9WGnczTVK2Ue_XB2Mxhsc-mB2nfhgzfvDPUGVOnWrI1eI4Xy8cg0RUP2GUEIzTBTKikUQvj5pBuSfWh8NjO4boqATjsP9PuK4-cxiMtdToinMOgOsS8mTJRxE7eHiQZcn7V4--Yk3Yz032AAobVY7K54HLqc0J4yS47nmve4Vb4St8uiZMCbEJc8GrPENdPjcMK3MJuF_66tNHXBubEucM7FaqdETUw1aagnwQPKxog"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8000/api/products/3"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,66 +1,279 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Passport ##
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Installation
 
-## About Laravel
+``` bash
+# clone the repo
+$ git clone https://github.com/mudassarali964/laravel-passport-laravel-10.git my-project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# go into app's directory
+$ cd my-project
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# install app's dependencies
+$ composer install
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# install app's dependencies
+$ npm install
 
-## Learning Laravel
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### If you choice to use SQLite
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+``` bash
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# create database
+$ touch database/database.sqlite
+```
+Copy file ".env.example", and change its name to ".env".
+Then in file ".env" replace this database configuration:
+* DB_CONNECTION=mysql
+* DB_HOST=127.0.0.1
+* DB_PORT=3306
+* DB_DATABASE=laravel_passport
+* DB_USERNAME=root
+* DB_PASSWORD=
 
-## Laravel Sponsors
+To this:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+* DB_CONNECTION=sqlite
+* DB_DATABASE=/path_to_your_project/database/database.sqlite
 
-### Premium Partners
+### If you choice to use PostgreSQL
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+1. Install PostgreSQL
 
-## Contributing
+2. Create user
+``` bash
+$ sudo -u postgres createuser --interactive
+enter name of role to add: laravel
+shall the new role be a superuser (y/n) n
+shall the new role be allowed to create database (y/n) n
+shall the new role be allowed to create more new roles (y/n) n
+```
+3. Set user password
+``` bash
+$ sudo -u postgres psql
+postgres= ALTER USER laravel WITH ENCRYPTED PASSWORD 'password';
+postgres= \q
+```
+4. Create database
+``` bash
+$ sudo -u postgres createdb laravel_passport
+```
+5. Copy file ".env.example", and change its name to ".env".
+   Then in file ".env" replace this database configuration:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* DB_CONNECTION=mysql
+* DB_HOST=127.0.0.1
+* DB_PORT=3306
+* DB_DATABASE=laravel_passport
+* DB_USERNAME=root
+* DB_PASSWORD=
 
-## Code of Conduct
+To this:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* DB_CONNECTION=pgsql
+* DB_HOST=127.0.0.1
+* DB_PORT=5432
+* DB_DATABASE=laravel_passport
+* DB_USERNAME=laravel
+* DB_PASSWORD=password
 
-## Security Vulnerabilities
+### If you choice to use MySQL
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Copy file ".env.example", and change its name to ".env".
+Then in file ".env" complete this database configuration:
+* DB_CONNECTION=mysql
+* DB_HOST=127.0.0.1
+* DB_PORT=3306
+* DB_DATABASE=laravel_passport
+* DB_USERNAME=root
+* DB_PASSWORD=
 
-## License
+### Set APP_URL
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+> If your project url looks like: example.com/sub-folder
+Then go to `my-project/.env`
+And modify this line:
+
+* APP_URL =
+
+To make it look like this:
+
+* APP_URL = http://example.com/sub-folder
+
+
+### Next step
+
+``` bash
+# in your app directory
+# generate laravel APP_KEY
+$ php artisan key:generate
+
+# run database migration and seed
+$ php artisan migrate:refresh --seed
+
+# generate mixing
+$ npm run build
+
+# and repeat generate mixing
+$ npm run dev
+```
+
+## Usage
+
+``` bash
+# start local server
+$ php artisan serve
+```
+
+## APIS
+1. Register
+2. Login
+3. List all products
+4. Create a product
+5. Retrieve a product
+6. Update a product
+7. Delete a product
+
+## Postman
+1. Register API: (POST)
+[localhost:8000/api/register](localhost:8000/api/register)
+
+Body => form-data
+* name: someOneName
+* email: someOneEmail
+* password: password
+* confirm_password: repeatPassword
+
+2. Login API: (POST)
+[localhost:8000/api/login](localhost:8000/api/login)
+
+Body => form-data
+* email: someOneEmail
+* password: password
+
+3. List all products API: (GET)
+[localhost:8000/api/products](localhost:8000/api/products)
+Make sure access token (get from login api) in your Headers or Authorization tab
+
+``` bash
+‘headers’ => [
+    ‘Accept’ => ‘application/json’,
+    ‘Authorization’ => ‘Bearer ‘.$accessToken,
+]
+```
+
+4. Create a product API: (POST)
+[localhost:8000/api/products](localhost:8000/api/products)
+
+5. Retrieve a product API: (GET)
+[localhost:8000/api/products/1](localhost:8000/api/products/1)
+
+6. Update a product API: (PUT)
+[localhost:8000/api/products/1](localhost:8000/api/products/1)
+
+7. Delete a product API: (DELETE)
+[localhost:8000/api/products/1](localhost:8000/api/products/1)
+
+## Postman collection path in json file
+
+[localhost:8000/collection/Laravel Passport.postman_collection.json](localhost:8000/collection/Laravel Passport.postman_collection.json)
+
+## About Passport - Following 7 points are most important
+
+1. Install Passport Auth:
+
+``` bash
+$composer require laravel/passport
+```
+
+2. After successfully install laravel passport, register providers. Open config/app.php . and put the bellow code:
+
+``` bash
+# config/app.php
+    'providers' =>[
+        Laravel\Passport\PassportServiceProvider::class,
+    ],
+```
+
+3. Now, you need to install laravel to generate passport encryption keys. This command will create the encryption keys needed to generate secure access tokens:
+
+``` bash
+$ php artisan passport:install
+```
+
+4. Passport Configuration:
+
+``` bash
+# In this step, Navigate to App/Models directory and open User.php file. Then update the following code into User.php:\
+    
+    use Laravel\Passport\HasApiTokens;
+    class User extends Authenticatable
+    {
+       use HasApiTokens;
+```
+   
+
+5. Next Register passport routes in App/Providers/AuthServiceProvider.php:
+
+``` bash
+# Go to App/Providers/AuthServiceProvider.php and update this line => Register Passport::routes(); inside of boot method
+
+    <?php
+    namespace App\Providers;
+    use Laravel\Passport\Passport;
+    use Illuminate\Support\Facades\Gate;
+    use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+     
+     
+    class AuthServiceProvider extends ServiceProvider
+    {
+        /**
+         * The policy mappings for the application.
+         *
+         * @var array
+         */
+        protected $policies = [
+            'App\Model' => 'App\Policies\ModelPolicy',
+        ];
+     
+     
+        /**
+         * Register any authentication / authorization services.
+         *
+         * @return void
+         */
+        public function boot()
+        {
+            $this->registerPolicies();
+        }
+    }
+```
+
+6. Next, Navigate to config/auth.php and open auth.php file. Then Change the API driver to the session to passport:
+
+``` bash
+# Put this code ‘driver’ => ‘passport’, in API
+
+[ 
+         'web' => [ 
+             'driver' => 'session', 
+             'provider' => 'users', 
+         ], 
+         'api' => [ 
+             'driver' => 'passport', 
+             'provider' => 'users', 
+         ], 
+     ],
+```
+
+7. Run Migration:
+
+``` bash
+php artisan migrate
+```
+
+
+
+
