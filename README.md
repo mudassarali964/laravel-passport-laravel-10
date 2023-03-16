@@ -140,7 +140,7 @@ $ php artisan serve
 1. Register API: (POST)
 [localhost:8000/api/register](localhost:8000/api/register)
 
-Body => form-data
+- Body => form-data
 * name: someOneName
 * email: someOneEmail
 * password: password
@@ -149,13 +149,13 @@ Body => form-data
 2. Login API: (POST)
 [localhost:8000/api/login](localhost:8000/api/login)
 
-Body => form-data
+- Body => form-data
 * email: someOneEmail
 * password: password
 
 3. List all products API: (GET)
 [localhost:8000/api/products](localhost:8000/api/products)
-Make sure access token (get from login api) in your Headers or Authorization tab
+* Make sure access token (get from login api) in your Headers or Authorization tab
 
 ``` bash
 ‘headers’ => [
@@ -178,7 +178,7 @@ Make sure access token (get from login api) in your Headers or Authorization tab
 
 ## Postman collection path in json file
 
-[localhost:8000/collection/Laravel Passport.postman_collection.json](localhost:8000/collection/Laravel Passport.postman_collection.json)
+[localhost:8000/collection/LaravelPassport.postman_collection.json](localhost:8000/collection/LaravelPassport.postman_collection.json)
 
 ## About Passport - Following 7 points are most important
 
@@ -271,7 +271,7 @@ $ php artisan passport:install
 7. Run Migration:
 
 ``` bash
-php artisan migrate
+$ php artisan migrate
 ```
 
 
